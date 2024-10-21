@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)https://www.faiteplus.com/ -->
+<html lang="en">
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="shortcut icon" href="https://www.faiteplus.com/img/faite.png">
+   <!-- GOOGLE FONTS CDN LINK -->
+   <link rel="preconnect" href="https://fonts.gstatic.com/">
+   <link href="./F A I T E_files/css2" rel="stylesheet">
+   <!-- CSS LINK -->
+   <link rel="stylesheet" href="./F A I T E_files/bootstrap.css">
+   <!-- AOS ANIAMATION PLUGIN -->
+   <link rel="stylesheet" href="./F A I T E_files/animate.css">
+   <!-- OWL CAROUSEL PLUGIN -->
+   <link rel="stylesheet" href="./F A I T E_files/owl.carousel.min.css">
+   <link rel="stylesheet" href="./F A I T E_files/owl.theme.default.min.css">
+   <!-- MAGNIFIC POPUP PLUGIN -->
+   <link rel="stylesheet" href="./F A I T E_files/magnific-popup.css">
+   <link rel="stylesheet" href="./F A I T E_files/custom.css">
+   <link rel="stylesheet" href="./F A I T E_files/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   
+   
+<title>F A I T E</title>
+</head>
+<body>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        /* Navigation Styles */
+        #navigration { /* Corrected ID */
+            background-color: black;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+    
+        /* Courses Section Styles */
+        .courses {
+            text-align: center;
+            padding: 150px 0; /* Increased padding for better spacing */
+            background-color: white;
+        }
+    
+        .courses h2 {
+            font-size: 2rem; /* Responsive font size */
+            margin-bottom: 40px;
+        }
+    
+        .course-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Makes the cards wrap on smaller screens */
+            gap: 30px; /* Consistent gap between cards */
+        }
+    
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Adjusted width for better responsiveness */
+            padding: 20px;
+            text-align: left; /* Align text to the left for better readability */
+            margin: 10px; /* Space around each card */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+    
+        .card:hover {
+            transform: translateY(-5px); /* Subtle hover effect */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+    
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+    
+        .card h3 {
+            font-size: 20px;
+            color: #333;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+    
+        .card h3 ion-icon,
+        .card h3 i {
+            margin-right: 10px; /* Adds space between icons and text */
+        }
+    
+        .icon-small {
+            font-size: 24px; /* Increase the icon size */
+            color: #333;
+        }
+    
+        .input-name.radio-button {
+            display: flex; /* Enable flexbox on the container */
+            flex-direction: column; /* Stack radio items vertically */
+            color: #060606;
+        }
+    
+        .radio-item {
+            display: flex; /* Enable flexbox on each radio item */
+            align-items: center; /* Align items vertically */
+            margin: 5px 0; /* Add some space between each radio item */
+        }
+    
+        .radio-item input {
+            margin-right: 10px; /* Add a small gap between the radio button and the label */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+    
+        input[type="radio"]:checked + label {
+            color: #060606; /* Change label color when checked */
+            font-weight: bold; /* Make label bold when checked */
+        }
+    
+        input[type="radio"]:hover + label {
+            color: #080808; /* Change label color on hover */
+        }
+    
+        /* Chevron for Course Overview */
+        .course-overview {
+            margin-top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+        }
+    
+        .course-overview ion-icon {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+    
+        .icon-text-pair {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+    
+        .icon-text-pair ion-icon,
+        .icon-text-pair i {
+            margin-right: 40px; /* Reducing space between icon and text */
+        }
+    
+        .icon-text-pair h3 {
+            margin: 0; /* Removes default margin to keep text aligned with icon */
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+    
+        .course-overview:hover ion-icon {
+            transform: rotate(180deg);
+        }
+    
+        .icon-small1 {
+            font-size: 16px; /* Adjust icon size if needed */
+            margin-left: 50px; /* Increase space between the icon and the text */
+        }
+        .nav-link ion-icon {
+    margin-left: 5px; /* Add some space between the text and the icon */
+    font-size: 1rem; /* Adjust the icon size as needed */
+}
+    
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .courses h2 {
+                font-size: 1.5rem; /* Adjust heading size on smaller screens */
+            }
+    
+            .course-cards {
+                gap: 20px; /* Smaller gap for mobile */
+            }
+    
+            .card {
+                width: 90%; /* Full width on smaller screens */
+                margin: 10px auto; /* Center cards */
+            }
+        }
+    </style>
+    
+    
+
+
+
+   <!-- ======================================== NAVIGRATION ======================================== -->
+   <nav id="navigration" class="navbar fixed-top p-0">
+      <div class="container">
+         <div>
+            <a class="logo" href="#"><img src="https://faiteplus.com/img/faite11.svg" alt=""></a>
+            <a class="logo" href="#">F A I T E .</a>
+            </div>
+         <div class="sidenav">
+            <div class="header">
+               <a class="logo d-lg-none" href="#">F A I T E</a>
+               <a href="#" class="d-lg-none" id="showsidenav"><img src="img/icon/letter-x.png" alt=""> </a>
+            </div>
+            <ul class="mb-0">
+               <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link" data-toggle="collapse" href="#menu1">Pages <ion-icon name="chevron-down-outline"></ion-icon></a>
+                  <div id="menu1" class="dropdown-menus collapse">
+                     <a class="dropdown-item" href="uc.html"><span>About Us</span></a>
+                     <a class="dropdown-item" href="uc.html"><span>Faq</span></a>
+                     <a class="dropdown-item" href="uc.html"><span>Pricing</span></a>
+                     <a class="dropdown-item" href="uc.html"><span>Team</span></a>
+                     <a class="dropdown-item" href="uc.html"><span>Coming Soon</span></a>
+                  </div>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link" data-toggle="collapse" href="#menu2">Services <ion-icon name="chevron-down-outline"></ion-icon></a>
+                  <div id="menu2" class="dropdown-menus collapse">
+                     <a class="dropdown-item" href="service.html"><span>Services</span></a>
+                     <a class="dropdown-item" href="spService.html"><span>Special Services</span></a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="blog.html"><span>Blog</span></a>
+              </li>
+              
+               <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            </ul>
+         </div>
+         <button class="btn font-btn get-quote d-none d-md-block"><i class="fal fa-chevron-right"></i> <span>Get A Quote</span></button>
+         <div id="hamburger" class="d-lg-none">
+            <img src="img/icon/menu.svg" class="img01" alt="">
+         </div>
+      </div>
+   </nav>
+
+   <!-- Courses Section -->
+<section class="courses">
+    <h2>Unlock your potential with our expertly designed courses</h2>
+
+    <div class="course-cards">
+        <div class="card">
+            <img src="./F A I T E_files/digital.png" alt="Web Development" />
+            <h3 style="color: rgb(15, 15, 15);"><b>Digital Marketing </b></h3>
+            <p style="color: #000;">Learn digital marketing to create effective online campaigns. Master SEO, social media marketing, email marketing, and analytics</p>
+        </div>
+        <div class="card">
+            <h3 style="color: #c51e05;">Certificate of Completion</h3>
+            <div class="icon-text-pair">
+                <ion-icon name="videocam-outline" class="icon-small"></ion-icon>
+                <h3>Lecture Videos</h3>
+            </div>
+            <div class="icon-text-pair">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <h3>Lecture Notes</h3>
+            </div>
+            <div class="icon-text-pair">
+                <ion-icon name="alarm-outline" class="icon-small"></ion-icon>
+                <h3>Flexible Time Access</h3>
+            </div>
+            <div class="icon-text-pair">
+                <ion-icon name="book-outline" class="icon-small"></ion-icon>
+                <h3>Assignments (Q/A)</h3>
+            </div>
+            <div class="input-name radio-button">
+                <label for=""> Select your level</label>
+                <div class="radio-item">
+                    <input type="radio" class="radio-button" name="level" id="beginner" />
+                    <label for="beginner">Beginner</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" class="radio-button" name="level" id="intermediate" />
+                    <label for="intermediate">Intermediate</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" class="radio-button" name="level" id="expert" />
+                    <label for="expert">Expert</label>
+                </div>
+            </div>
+            <div class="icon-text-pair">
+                <h3><b>Course Overview</b></h3>
+                <ion-icon name="chevron-down-outline" class="icon-small1"></ion-icon>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- ======================================== FOOTER SECTION ======================================== -->
+    <section id="footerSection">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                 <div class="footer-box">
+                    <a href="https://www.faiteplus.com/#" class="logo">F A I T E</a>
+                    <p class="about">Welcome to our IT service and consulting agency.
+                       Streamlining your digital journey with secure, innovative solutions.
+                       We simplify IT, so you can focus on what’s important your business.</p>
+                    <div class="social-links">
+                       <a href="https://web.facebook.com/profile.php?id=61557134806133"><i class="fab fa-facebook"
+                             aria-hidden="true"></i></a>
+                       <a
+                          href="https://www.linkedin.com/company/100507341/admin/inbox/thread/2-ODg5ZDc0MmQtMTgyYi00Mzc5LTg3NzctZTZmMTliMzk3MzFkXzAxMg==/"><i
+                             class="fab fa-linkedin" aria-hidden="true"></i></a>
+                       <a href="https://www.instagram.com/faite_plus/"><i class="fab fa-instagram"
+                             aria-hidden="true"></i></a>
+                       <a href="https://wa.me/94720804389?text=Can%20I%20learn%20more%20about%20your%20services"
+                          class="whatsapp-link" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    </div>
+                 </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                 <div class="footer-box box2">
+                    <p class="title">EXPLORE</p>
+                    <ul>
+                       <li><a href="https://www.faiteplus.com/#">Support</a></li>
+                       <li><a href="https://www.faiteplus.com/#">Privacy</a></li>
+                       <li><a href="https://www.faiteplus.com/#">Policy</a></li>
+                       <li><a href="https://www.faiteplus.com/#">Terms Of Use</a></li>
+                       <li class="mb-0"><a href="https://www.faiteplus.com/#">Help</a></li>
+                    </ul>
+                 </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                 <div class="footer-box box3">
+                    <p class="title">CONTACT</p>
+                    <div class="icon-box">
+                       <div class="icon">
+                        <ion-icon name="location-outline" style="color: #ffcc00;"></ion-icon>
+                       </div>
+                       <div class="txt">
+                          <span>Sub-Post Office , Kirulapana , Colombo 05.. </span>
+                       </div>
+                    </div>
+                    <div class="icon-box">
+                       <div class="icon">
+                        <ion-icon name="mail-outline" style="color: #ffcc00;"></ion-icon>
+                       </div>
+                       <div class="txt">
+                          <span>info@faiteplus.com</span>
+                       </div>
+                    </div>
+                    <div class="icon-box mb-0">
+                       <div class="icon">
+                        <ion-icon name="call-outline" style="color: #ffcc00;"></ion-icon>
+                       </div>
+                       <div class="txt">
+                          <span>+94720804389</span>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                 <div class="footer-box box4">
+                    <p class="title">NEWSLETTER</p>
+                    <form>
+                       <div class="form-group">
+                          <input type="email" class="form-control" placeholder="Email Address">
+                       </div>
+                       <button type="submit" class="btn" name="button">
+                        <ion-icon name="mail-outline" style="color: b"></ion-icon></button>
+                    </form>
+                    <span>Sign up for our latest news &amp; articles. We won’t give you spam mails.</span>
+                 </div>
+              </div>
+           </div>
+           <div class="copy-right">
+              <div class="row">
+                 <div class="col">
+                    <span>Copyright © 2024 FAITE. All rights reserved.</span>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </section>
+  

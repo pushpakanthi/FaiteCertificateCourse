@@ -1,0 +1,17 @@
+{
+    "name": "94716/faite_learn_website",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "94716\\FaiteLearnWebsite\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pooja"
+        }
+    ],
+    "minimum-stability": "stable"
+}

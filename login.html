@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function handleLoginForm(event) {
+            event.preventDefault();
+
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            fetch('login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'email': email,
+                    'password': password
+                })
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data.includes('success')) {
+                    // Set the login status in sessionStorage
+                    sessionStorage.setItem('isLoggedIn', 'true');
+
+                    const nextCoursePage = sessionStorage.getItem('nextCoursePage');
+                    if (nextCoursePage) {
+                        window.location.href = nextCoursePage; // Redirect to the stored course page
+                        sessionStorage.removeItem('nextCoursePage'); // Clear the stored page
+                    } else {
+                        window.location.href = 'index.html'; // Redirect to the homepage if no specific page was stored
+                    }
+                } else if (data.includes('Invalid Password')) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Invalid Password',
+                        text: 'The password you entered is incorrect.'
+                    });
+                } else if (data.includes('User Not Found')) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'User Not Found',
+                        text: 'No user found with that email. Would you like to register?',
+                        showCancelButton: true,
+                        confirmButtonText: 'Register',
+                        cancelButtonText: 'Cancel'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'register.html';
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'An error occurred. Please try again.'
+                    });
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Failed to log in. Please try again later.'
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('form').addEventListener('submit', handleLoginForm);
+        });
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form onsubmit="event.preventDefault(); handleLoginForm(event);">
+                <div class="input-group">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="forgot-password">
+                    <a href="forgot_password.php">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="register.html">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

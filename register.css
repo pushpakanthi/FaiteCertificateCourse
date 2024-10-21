@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    background: rgb(233, 225, 225);
+}
+
+.container {
+    background: white;
+    width: 90%; /* Change to percentage for responsiveness */
+    max-width: 500px; /* Maintain max width */
+    padding: 25px;
+    margin: 50px auto;
+    border-top: 10px solid #333;
+    box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container h2 {
+    font-size: 24px;
+    padding: 30px;
+    text-align: center;
+}
+
+.input-name {
+    width: 100%;
+    position: relative;
+    margin: 20px auto;
+}
+
+.input-name.double-input {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.input-name.double-input .name,
+.input-name .text-name {
+    width: 100%;
+    padding: 8px 0 8px 40px;
+}
+
+.input-name.double-input .name {
+    width: calc(50% - 20px); /* Adjust width with space */
+    margin-right: 20px; /* Space between inputs */
+}
+
+.input-name.double-input .name:last-child {
+    margin-right: 0; /* Remove margin for last item */
+}
+
+.input-name i {
+    position: absolute;
+    font-size: 18px;
+    color: rgb(10, 10, 10);
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.radio-button {
+    display: flex;
+    align-items: center;
+}
+
+.radio-button input {
+    margin-right: 5px;
+}
+
+
+.button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffcc00;
+    color: white;
+    border: none; /* Use 'none' for better appearance */
+    cursor: pointer;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .input-name.double-input .name {
+        width: 100%; /* Full width on smaller screens */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .container {
+        margin: 20px; /* Adjust margin for smaller screens */
+    }
+}
